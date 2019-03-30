@@ -10,6 +10,11 @@ var app = new Vue({
             {text: '4'},
         ],
     },
+    methods: {
+        reverseMessage: function () {
+            this.message = this.message.split('').reverse().join('')
+        }
+    },
 });
 
 app.message = 'I have changed the data!';
