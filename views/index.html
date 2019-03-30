@@ -16,9 +16,11 @@
             </ol>
 
             <p>{{ message }}</p>
-            {{ message }}
 
             <button v-on:click="reverseMessage">Reverse Message</button>
+
+            <p>{{ message }}</p>
+            <input v-model="message">
         </div>
     </body>
 
