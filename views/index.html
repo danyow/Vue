@@ -1,118 +1,25 @@
-<!-- <html>
-    <head>
-        <link rel="stylesheet" href="/static/css/index.css">
-        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-    </head>
-
-    <body>
-        <div id="app">
-            {{ message }}
-
-            <ol>
-                <li v-for="todo in todos">
-                    {{ todo.text }}
-                </li>
-            </ol>
-
-            <p>{{ message }}</p>
-
-            <button v-on:click="reverseMessage">Reverse Message</button>
-
-            <p>{{ message }}</p>
-            <input v-model="message">
-
-            <ol>
-                <todo-item></todo-item>
-            </ol>
-
-            <ol>
-                <todo-item
-                    v-for="item in groceryList"
-                    v-bind:todo="item"
-                    v-bind:key="item.id">
-                </todo-item>
-            </ol>
-
-        </div>
-    </body>
-
-    <script src="/static/js/index.js"></script>
-</html> -->
-
 <!DOCTYPE html>
 <html>
-	<head>
+	<head><link rel="stylesheet" href="/static/css/normalize.css">
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<link rel="stylesheet" href="https://cdn.rawgit.com/jgthms/minireset.css/master/minireset.css">
-		<link rel="stylesheet" href="css/debug.css">
-		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,500,700,900">
+		<!-- <link rel="stylesheet" href="https://cdn.rawgit.com/jgthms/minireset.css/master/minireset.css"> -->
+		<link rel="stylesheet" href="/static/css/debug.css">
+		<link rel="stylesheet" href="/static/css/index.css">
+		<!-- <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,500,700,900"> -->
 		<script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
-		<style>
-
-/* resets */
-* { color: inherit; }
-input { font: inherit; border: unset; background: unset; }
-input:focus { outline: unset; }
-
-:root {
-	font: 1rem/1.175 "BlinkMacSystemFont", -apple-system, "Roboto", sans-seri;
-}
-
-#app {
-	display: flex;
-	flex-direction: column; justify-content: center; align-items: center;
-	width: 100vw; height: 100vh;
-	font-weight: 900; font-size: 8rem;
-	color: hsl(0, 0%, 100%);
-	background: hsl(240, 100%, 67%);
-}
-
-input { text-align: center; }
-
-img {
-	width: 8rem; height: 8rem;
-	vertical-align: calc(-0.12109375em);
-}
-
-		</style>
 	</head>
 	<body>
 
-		<div id="app">
-            <!-- <p> {{ message }} </p> -->
-            <!-- <p v-text="message"></p> -->
-            <!-- <p v-html="message"></p> -->
-            <input type="text" v-model="message2"></input>
-            <p
-                v-html="
-                    message1.slice(0,7)+message2+message1.slice(12)
-                "
-            >
-            </p>
+		<div id="app" :style="gradient(active)">
+			<swatch
+				v-for="swatch in swatches"
+				@click.native="activate(swatch)"
+				:active="active" :swatch="swatch" :effect="gradient"
+			></swatch>
 		</div>
 
-		<script>
-
-"use strict"
-
-// emojify returns the corresponding emoji image
-function emojify(name) {
-	var out = `<img src="/static/emojis/` + name + `.png">`
-	return out
-}
-
-var app = new Vue({
-	el: "#app",
-    data: {
-        // message: "Hello, world!!!",
-        // message: "Hello, World! " + emojify("celebration"),
-        message1: "Hello, World! " + emojify("celebration"),
-        message2: "Vue"
-    }
-})
-
-		</script>
+		<script src="/static/js/index.js"></script>
 
 	</body>
 </html>
