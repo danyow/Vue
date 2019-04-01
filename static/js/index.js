@@ -1,42 +1,8 @@
-// Vue.component('todo-item', {
-//     props:['todo'],
-//     template: '<li> {{ todo.text }} </li>'
-// })
-
-// var app = new Vue({
-//     el: '#app',
-//     data: {
-//         message: 'Hello Vue!!!!!!!',
-//         seen: true,
-//         todos: [
-//             {text: '1'},
-//             {text: '2'},
-//             {text: '3'},
-//             {text: '4'},
-//         ],
-//         groceryList: [
-//             {id: 0, text:'Vegetables'},
-//             {id: 1, text:'Cheese'},
-//             {id: 2, text:'Whatever else humans are supposed to eat'},
-//         ]
-//     },
-//     methods: {
-//         reverseMessage: function () {
-//             this.message = this.message.split('').reverse().join('')
-//         }
-//     },
-// });
-
-// app.message = 'I have changed the data!';
-// app.seen = false;
-// app.todos.push({text: 'New item'})
-
-
 "use strict"
 
 // emojify returns the corresponding emoji image
 function emojify(name) {
-	var out = `<img src="/static/emojis/` + name + `.png">`
+	var out = `<img src="/static/img/emojis/` + name + `.png">`
 	return out
 }
 
@@ -69,16 +35,16 @@ var app = new Vue({
 	data: {
 		active: "",
 		swatches: [
-		    { emoji: emojify("lion"    ), color: "#ff691f" },
-		    { emoji: emojify("tiger"   ), color: "#fab81e" },
-		    { emoji: emojify("fish"    ), color: "#7fdbb6" },
-		    { emoji: emojify("frog"    ), color: "#19cf86" },
-		    { emoji: emojify("dolphin" ), color: "#91d2fa" },
-		    { emoji: emojify("whale"   ), color: "#1b95e0" },
-		    { emoji: emojify("elephant"), color: "#abb8c2" },
-		    { emoji: emojify("octopus" ), color: "#e81c4f" },
-		    { emoji: emojify("pig"     ), color: "#f58ea8" },
-		    { emoji: emojify("unicorn" ), color: "#981ceb" },
+		    // { emoji: emojify("lion"    ), color: "#ff691f" },
+		    // { emoji: emojify("tiger"   ), color: "#fab81e" },
+		    // { emoji: emojify("fish"    ), color: "#7fdbb6" },
+		    // { emoji: emojify("frog"    ), color: "#19cf86" },
+		    // { emoji: emojify("dolphin" ), color: "#91d2fa" },
+		    // { emoji: emojify("whale"   ), color: "#1b95e0" },
+		    // { emoji: emojify("elephant"), color: "#abb8c2" },
+		    // { emoji: emojify("octopus" ), color: "#e81c4f" },
+		    // { emoji: emojify("pig"     ), color: "#f58ea8" },
+		    // { emoji: emojify("unicorn" ), color: "#981ceb" },
 		    { emoji: emojify("rabbit"  ), color: "#ffffff" },
 		    { emoji: emojify("wolf"    ), color: "#000000" },
 		],
